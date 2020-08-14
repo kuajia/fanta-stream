@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>FantaStream</title>
+  <base href="./">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+</head>
+<body>
+
+  <script src="https://player.live-video.net/1.0.0/amazon-ivs-player.min.js"></script>
+  <video id="video-player" playsinline></video>
+  
+  <script>
+      console.log("TEST");
+      if (IVSPlayer.isPlayerSupported) {
+        const player = IVSPlayer.create();
+        player.attachHTMLVideoElement(document.getElementById('video-player'));
+        player.load("https://91040aec1953.us-east-1.playback.live-video.net/api/video/v1/us-east-1.300774641238.channel.fAIUa22CJqI4.m3u8");
+        player.play();
+      }
+
+  </script>
+
+  <app-root></app-root>
+</body>
+</html>
